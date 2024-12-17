@@ -7,7 +7,12 @@ public class Apprenant extends Personne {
     // declaration des variables
     ArrayList<Double> notes = new ArrayList<Double>();//stocker les notes des apprenants
    Class<Class> classe;//refference de la class Class
-    //instanciation d'un objet Personne
+    /*//instanciation d'un objet Class
+    // Obtenir la référence à la classe de l'objet (Exemple)
+    Class<?> classe = obj.getClass(); // Utilise getClass() pour obtenir une référence à la classe
+
+    // Ou obtenir la référence de la classe directement via .class
+    Class<Exemple> classeDirecte = Exemple.class;*/
 
 
     //declaration methode Ajouter
@@ -25,8 +30,6 @@ public class Apprenant extends Personne {
        // String numPhone=ReadString();
         setMunPhone(ReadString());
         System.out.println("entrer le nom de la classe de l/'apprenant: ");
-
-
 
     }
     //declaration methode Ajouter

@@ -1,9 +1,11 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Class {
     private String nom;
    private Formateur formateur;
     ArrayList<Apprenant> apprenants = new ArrayList<Apprenant>();
+
     //getters and setters
 
     public String getNom() {
@@ -29,4 +31,20 @@ public class Class {
     public void setApprenants(ArrayList<Apprenant> apprenants) {
         this.apprenants = apprenants;
     }
+
+
+    public String ReadString(){
+        String string;
+        Scanner scanner = new Scanner(System.in);
+        string = scanner.nextLine();
+        return string;
+
+    }
+    //methods
+    public java.lang.Class<? extends Class> CreerClasse(){
+
+        setNom(ReadString());
+        return getClass();
+    }
+
 }
