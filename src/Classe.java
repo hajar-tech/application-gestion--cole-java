@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Classe {
-    private String nom;
-   private Formateur formateur;
+    public String nom;
+   public Formateur formateur;
     ArrayList<Apprenant> apprenants = new ArrayList<Apprenant>();
 
     //getters and setters
