@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Class {
+public class Classe {
     private String nom;
    private Formateur formateur;
     ArrayList<Apprenant> apprenants = new ArrayList<Apprenant>();
@@ -15,6 +15,7 @@ public class Class {
     public void setNom(String nom) {
         this.nom = nom;
     }
+
 
     public Formateur getFormateur() {
         return formateur;
@@ -40,11 +41,21 @@ public class Class {
         return string;
 
     }
+    Apprenant ap = new Apprenant();
+    Formateur form = new Formateur();
     //methods
-    public java.lang.Class<? extends Class> CreerClasse(){
-
+    public void CreerClasse(){
+        System.out.println("entrer le nom de la classe: ");
         setNom(ReadString());
-        return getClass();
+        System.out.println("entrer le nom du formateur: ");
+        setFormateur(form.setNom(ReadString()));
+            ap.Ajouter();
+    }
+    public void AfficherClasse(){
+        System.out.println("le non de la classe est : "+getNom());
+        System.out.println("le nom du formateur est : "+getFormateur());
+        ap.Afficher();
+
     }
 
 }

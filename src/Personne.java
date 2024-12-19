@@ -2,14 +2,25 @@ import java.util.Scanner;
 
 abstract class Personne {
     // declaration des variabes
+
     private int id;
     private String nom;
     private String prenom;
     private String email;
-    private String munPhone;
+    private String numPhone;
 
+//constructeur
+    Personne(String nom,String prenom,String email,String numPhone,int id){
+        this.nom=nom;
+        this.prenom=prenom;
+        this.email=email;
+        this.numPhone=numPhone;
+        this.id=id;
 
-    Personne(){}
+    }
+ public   Personne(){
+
+    }
 // getters and setters
 
     public int getId() {
@@ -24,8 +35,9 @@ abstract class Personne {
         return nom;
     }
 
-    public void setNom(String nom) {
+    public Formateur setNom(String nom) {
         this.nom = nom;
+        return null;
     }
 
     public String getPrenom() {
@@ -44,16 +56,23 @@ abstract class Personne {
         this.email = email;
     }
 
-    public String getMunPhone() {
-        return munPhone;
+    public String getNumPhone() {
+        return numPhone;
     }
 
-    public void setMunPhone(String munPhone) {
-        this.munPhone = munPhone;
+    public void setNumPhone(String numPhone) {
+        this.numPhone = numPhone;
     }
 
 
     // declaration des methodes
+
+    abstract public  void Ajouter();
+    abstract public  void Modifier();
+    abstract public  void Afficher();
+    abstract public  void Supprimer();
+    abstract public  void Associer();
+
 
     public String ReadString(){
         String string;

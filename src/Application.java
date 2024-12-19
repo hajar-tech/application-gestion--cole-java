@@ -1,10 +1,9 @@
 import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Application {
     public static void main(String[] args) {
 
+        Classe classe=new Classe();
         Apprenant apprenant=new Apprenant();
         Scanner scanner = new Scanner(System.in);
     //menu principale
@@ -32,8 +31,10 @@ public class Application {
                     choix1 = scanner.nextInt();
                 switch (choix1){
                     case 1:
+                        classe.CreerClasse();
                         break;
                     case 2:
+                        classe.AfficherClasse();
                         break;
                     case 3:
                         break;
@@ -87,12 +88,12 @@ public class Application {
                     choix3 = scanner.nextInt();
                     switch (choix3){
                         case 1:
-                            apprenant.AjouterApprenants();
+                            apprenant.Ajouter();
                             break;
                         case 2:
                             break;
                         case 3:
-                            apprenant.AfficherApprenants();
+                            apprenant.Afficher();
                             break;
                         case 4:
                             break;
