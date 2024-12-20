@@ -2,12 +2,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Classe {
+
+    //declaration des variables
     public String nom;
-   public Formateur formateur;
+    public Formateur formateur;
     ArrayList<Apprenant> apprenants = new ArrayList<Apprenant>();
 
     //getters and setters
-
     public String getNom() {
         return nom;
     }
@@ -39,11 +40,12 @@ public class Classe {
         Scanner scanner = new Scanner(System.in);
         string = scanner.nextLine();
         return string;
-
     }
+    //objects
     Apprenant ap = new Apprenant();
     Formateur form = new Formateur();
-    //methods
+
+    //methode creer classe
     public void CreerClasse(){
         System.out.println("entrer le nom de la classe: ");
         setNom(ReadString());
@@ -51,11 +53,13 @@ public class Classe {
         setFormateur(form.setNom(ReadString()));
             ap.Ajouter();
     }
+
+    //methode afficher classe
     public void AfficherClasse(){
         System.out.println("le non de la classe est : "+getNom());
         System.out.println("le nom du formateur est : "+getFormateur());
         ap.Afficher();
-
+        form.Afficher();
     }
 
 }

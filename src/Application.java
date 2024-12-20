@@ -5,6 +5,7 @@ public class Application {
 
         Classe classe=new Classe();
         Apprenant apprenant=new Apprenant();
+        Formateur formateur = new Formateur();
         Scanner scanner = new Scanner(System.in);
     //menu principale
         int choix;
@@ -60,10 +61,12 @@ public class Application {
                     choix2 = scanner.nextInt();
                     switch (choix2){
                         case 1:
+                            formateur.Ajouter();
                             break;
                         case 2:
                             break;
                         case 3:
+                            formateur.Afficher();
                             break;
                         case 4:
                             break;
@@ -96,6 +99,7 @@ public class Application {
                             apprenant.Afficher();
                             break;
                         case 4:
+                            apprenant.Modifier();
                             break;
                         case 5:
                             break;

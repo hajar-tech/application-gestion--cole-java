@@ -1,28 +1,25 @@
 import java.util.Scanner;
 
 abstract class Personne {
-    // declaration des variabes
 
+    // declaration des variabes
     private int id;
     private String nom;
     private String prenom;
     private String email;
     private String numPhone;
 
-//constructeur
-    Personne(String nom,String prenom,String email,String numPhone,int id){
+   //constructeur
+    public Personne(String nom,String prenom,String email,String numPhone,int id){
         this.nom=nom;
         this.prenom=prenom;
         this.email=email;
         this.numPhone=numPhone;
         this.id=id;
-
     }
- public   Personne(){
+    public Personne(){}
 
-    }
-// getters and setters
-
+   // getters and setters
     public int getId() {
         return id;
     }
@@ -64,9 +61,7 @@ abstract class Personne {
         this.numPhone = numPhone;
     }
 
-
     // declaration des methodes
-
     abstract public  void Ajouter();
     abstract public  void Modifier();
     abstract public  void Afficher();
