@@ -97,7 +97,20 @@ public class Apprenant extends Personne {
 
     @Override
     public void Supprimer() {
-
+        System.out.println("entrer id de l'apprenant à modifier: ");
+        int id = sc.nextInt();
+        Apprenant app = null;
+        for (Apprenant apprenant: apprenants){
+           if (apprenant.getId()==id){
+               app=apprenant;
+           }
+        }
+        if(app!=null){
+            apprenants.remove(app);
+            System.out.println("apprenant supprimer avec succée");
+        }else {
+            System.out.println("apprenent introuvable!!");
+        }
     }
 
     @Override
