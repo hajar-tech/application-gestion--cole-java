@@ -59,6 +59,7 @@ public class Apprenant extends Personne {
     public void Modifier() {
         System.out.println("entrer id de l'apprenant à modifier: ");
         int id = sc.nextInt();
+        sc.nextLine();
         for (Apprenant apprenant : apprenants){
             if (apprenant.getId()==id){
                 System.out.println("entrer le nouveau nom de l/'apprenant : ");
@@ -78,6 +79,7 @@ public class Apprenant extends Personne {
                 ArrayList<Double> listNotes = new ArrayList<Double>();
                 apprenant.setNotes(listNotes);
                 listNotes.add(notes);
+                System.out.println("------apprenant modifier avec succés------");
             }
         else{
             System.out.println("apprenant introuvable!!!");
@@ -97,7 +99,7 @@ public class Apprenant extends Personne {
 
     @Override
     public void Supprimer() {
-        System.out.println("entrer id de l'apprenant à modifier: ");
+        System.out.println("entrer id de l'apprenant à supprimer: ");
         int id = sc.nextInt();
         Apprenant app = null;
         for (Apprenant apprenant: apprenants){
@@ -107,9 +109,9 @@ public class Apprenant extends Personne {
         }
         if(app!=null){
             apprenants.remove(app);
-            System.out.println("apprenant supprimer avec succée");
+            System.out.println("------apprenant supprimer avec succée------");
         }else {
-            System.out.println("apprenent introuvable!!");
+            System.out.println("-----apprenent introuvable!!------");
         }
     }
 
@@ -119,7 +121,7 @@ public class Apprenant extends Personne {
     }
 
     public Apprenant Recherche(){
-        System.out.println("entrer id de l'apprenant à modifier: ");
+        System.out.println("entrer id de l'apprenant à rechercher: ");
         int var = sc.nextInt();
         for (Apprenant apprenant : apprenants){
             if(var==apprenant.getId()) {return apprenant; }

@@ -51,10 +51,10 @@ public class Application {
                 do {
                     System.out.println("------- menu gestion des Formateurs ---------");
                     System.out.println("1:Ajouter un formateur ");
-                    System.out.println("2:Associer un formateur ");
-                    System.out.println("3:Afficher un formateur ");
-                    System.out.println("4:Modifier un formateur ");
-                    System.out.println("5:Supprimer un formateur ");
+                    System.out.println("2:Afficher un formateur ");
+                    System.out.println("3:Modifier un formateur ");
+                    System.out.println("4:Supprimer un formateur");
+                    System.out.println("5:Associer un formateur ");
                     System.out.println("6:Quitter");
 
                     System.out.println("entrer votre choix : ");
@@ -64,11 +64,13 @@ public class Application {
                             formateur.Ajouter();
                             break;
                         case 2:
-                            break;
-                        case 3:
                             formateur.Afficher();
                             break;
+                        case 3:
+                            formateur.Modifier();
+                            break;
                         case 4:
+                            formateur.Supprimer();
                             break;
                         case 5:
                             break;
@@ -81,10 +83,10 @@ public class Application {
                 do {
                     System.out.println("------- menu gestion des Apprenants ---------");
                     System.out.println("1:Ajouter un Appranant ");
-                    System.out.println("2:Associer un Appranant ");
-                    System.out.println("3:Afficher un Appranant ");
-                    System.out.println("4:Modifier un Appranant ");
-                    System.out.println("5:Supprimer un Appranant ");
+                    System.out.println("2:Afficher un Appranant");
+                    System.out.println("3:Modifier un Appranant ");
+                    System.out.println("4:Supprimer un Appranant  ");
+                    System.out.println("5:Associer un Appranant ");
                     System.out.println("6:Quitter");
 
                     System.out.println("entrer votre choix : ");
@@ -94,14 +96,16 @@ public class Application {
                             apprenant.Ajouter();
                             break;
                         case 2:
-                            break;
-                        case 3:
                             apprenant.Afficher();
                             break;
-                        case 4:
+                        case 3:
                             apprenant.Modifier();
                             break;
+                        case 4:
+                            apprenant.Supprimer();
+                            break;
                         case 5:
+
                             break;
                         case 6:
                             break;

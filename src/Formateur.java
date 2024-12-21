@@ -67,6 +67,7 @@ public class Formateur extends Personne {
     public void Modifier() {
         System.out.println("entrer id du formateutr  à modifier: ");
         int id = sc.nextInt();
+        sc.nextLine();
         for (Formateur formateur : formateurs){
             if (formateur.getId()==id){
                 System.out.println("entrer le nouveau nom du formateutr  : ");
@@ -87,10 +88,10 @@ public class Formateur extends Personne {
                 System.out.println("entrer le nouveau  salaire du formateutr : ");
                 double salaire = sc.nextDouble();
                 formateur.setSalaire(salaire);
-
+                System.out.println("-------formateur supprimer avec succés--------");
             }
             else{
-                System.out.println("formateur introuvable!!!");
+                System.out.println("--------formateur introuvable!!!---------");
             }
         }
 
@@ -108,7 +109,7 @@ public class Formateur extends Personne {
 
     @Override
     public void Supprimer() {
-        System.out.println("entrer id du formateur à modifier: ");
+        System.out.println("entrer id du formateur à supprimer: ");
         int id = sc.nextInt();
         Formateur form = null;
         for (Formateur formateur: formateurs){
@@ -118,15 +119,16 @@ public class Formateur extends Personne {
         }
         if(form!=null){
             formateurs.remove(form);
-            System.out.println("formateur supprimer avec succée");
+            System.out.println("------formateur supprimer avec succée-------");
         }else {
-            System.out.println("formateur introuvable!!");
+            System.out.println("-----formateur introuvable!!------");
         }
 
     }
 
     @Override
     public void Associer() {
+
 
     }
 
