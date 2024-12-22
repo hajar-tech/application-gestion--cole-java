@@ -57,7 +57,7 @@ public class Formateur extends Personne {
             String specialite = sc.nextLine();
             System.out.println("entrer le salaire du formateur "+(i+1)+" : ");
             Double salaire = sc.nextDouble();
-            //int id=formateurs.getLast().getId()+1;
+            sc.nextLine();
             id = id+1;
             Formateur formateur = new Formateur(nom,prenom,email,phoneNum,id,specialite,salaire);
             formateurs.add(formateur);
@@ -68,8 +68,10 @@ public class Formateur extends Personne {
         System.out.println("entrer id du formateutr  à modifier: ");
         int id = sc.nextInt();
         sc.nextLine();
+        int found=0;
         for (Formateur formateur : formateurs){
             if (formateur.getId()==id){
+                found=1;
                 System.out.println("entrer le nouveau nom du formateutr  : ");
                 String nom = sc.nextLine();
                 formateur.setNom(nom);
@@ -88,7 +90,7 @@ public class Formateur extends Personne {
                 System.out.println("entrer le nouveau  salaire du formateutr : ");
                 double salaire = sc.nextDouble();
                 formateur.setSalaire(salaire);
-                System.out.println("-------formateur supprimer avec succés--------");
+                System.out.println("-------formateur modifié avec succés--------");
             }
             else{
                 System.out.println("--------formateur introuvable!!!---------");

@@ -48,6 +48,7 @@ public class Apprenant extends Personne {
         String phoneNum = sc.nextLine();
         System.out.println("entrer la note: ");
         double notes = sc.nextDouble();
+        sc.nextLine();
         ArrayList<Double> listNotes = new ArrayList<Double>();
         listNotes.add(notes);
             id=id+1;
@@ -58,10 +59,10 @@ public class Apprenant extends Personne {
     @Override
     public void Modifier() {
         System.out.println("entrer id de l'apprenant à modifier: ");
-        int id = sc.nextInt();
+        int idd = sc.nextInt();
         sc.nextLine();
         for (Apprenant apprenant : apprenants){
-            if (apprenant.getId()==id){
+            if (apprenant.getId()==idd){
                 System.out.println("entrer le nouveau nom de l/'apprenant : ");
                 String nom = sc.nextLine();
                 apprenant.setNom(nom);
@@ -81,9 +82,9 @@ public class Apprenant extends Personne {
                 listNotes.add(notes);
                 System.out.println("------apprenant modifier avec succés------");
             }
-        else{
+         else{
             System.out.println("apprenant introuvable!!!");
-        }
+         }
         }
 
     }
@@ -101,6 +102,7 @@ public class Apprenant extends Personne {
     public void Supprimer() {
         System.out.println("entrer id de l'apprenant à supprimer: ");
         int id = sc.nextInt();
+        sc.nextLine();
         Apprenant app = null;
         for (Apprenant apprenant: apprenants){
            if (apprenant.getId()==id){
@@ -120,7 +122,7 @@ public class Apprenant extends Personne {
         System.out.println("entrer le nom de la classe: ");
         String nom = sc.nextLine();
         for (Classe classe : classes){
-            if(classe.getNom().equals(sc.nextLine())){
+            if(classe.getNom().equals(nom)){
                 System.out.println("entre id de l/'apprenant: ");
                 int id = sc.nextInt();
                 sc.nextLine();
