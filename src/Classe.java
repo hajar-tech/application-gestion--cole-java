@@ -9,7 +9,7 @@ public class Classe {
     ArrayList<Apprenant> apprenants = new ArrayList<Apprenant>();
     ArrayList<Formateur>formateurs = new ArrayList<>();
     ArrayList<Classe>classes = new ArrayList<Classe>();
-//constructeur
+    //constructeur
    public  Classe (){}
     public  Classe(String nom, Formateur formateur, Apprenant apprenant){
         this.nom=nom;

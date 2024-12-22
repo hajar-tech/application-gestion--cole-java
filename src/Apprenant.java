@@ -5,13 +5,13 @@ import java.util.Scanner;
 public class Apprenant extends Personne {
 
     Scanner sc = new Scanner(System.in);
+
     // declaration des variables
     static  int id;
     ArrayList<Apprenant> apprenants= new ArrayList<Apprenant>();
     ArrayList<Classe>classes=new ArrayList<>();
     ArrayList<Double> notes = new ArrayList<Double>();//stocker les notes des apprenants
     Class classe;
-    //Class<Class> classe;
     //getter ant setter
 
 
@@ -38,7 +38,6 @@ public class Apprenant extends Personne {
         int num = sc.nextInt();
         sc.nextLine();
         for (int i =0 ; i<num;i++){
-          //  int id =i+1;
         System.out.println("entrer le nom de l/'apprenant "+(i+1)+" : ");
         String nom = sc.nextLine();
         System.out.println("entrer le prenom de l/'apprenant "+(i+1)+" : ");
@@ -141,16 +140,5 @@ public class Apprenant extends Personne {
         }
     }
 
-
-
-    public Apprenant Recherche(){
-        System.out.println("entrer id de l'apprenant à rechercher: ");
-        int var = sc.nextInt();
-        for (Apprenant apprenant : apprenants){
-            if(var==apprenant.getId()) {return apprenant; }
-            return null;
-        }
-        return null;
-    }
 
 }
