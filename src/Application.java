@@ -38,8 +38,10 @@ public class Application {
                         classe.AfficherClasse();
                         break;
                     case 3:
+                        classe.ModifierClass();
                         break;
                     case 4:
+                        classe.SupprimerClasse();
                         break;
                     case 5:
                         break;
@@ -73,6 +75,7 @@ public class Application {
                             formateur.Supprimer();
                             break;
                         case 5:
+                            formateur.Associer();
                             break;
                         case 6:
                             break;
@@ -105,7 +108,7 @@ public class Application {
                             apprenant.Supprimer();
                             break;
                         case 5:
-
+                            apprenant.Associer();
                             break;
                         case 6:
                             break;

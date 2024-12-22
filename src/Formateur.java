@@ -9,6 +9,7 @@ public class Formateur extends Personne {
     public String specialite;
     public double salaire;
     public  ArrayList<Formateur>formateurs=new ArrayList<>();
+    public ArrayList<Classe>classes=new ArrayList<>();
     Scanner sc = new Scanner(System.in);
 
     // getter and setter
@@ -128,7 +129,27 @@ public class Formateur extends Personne {
 
     @Override
     public void Associer() {
-
+        System.out.println("entrer le nom de la classe: ");
+        String nom =sc.nextLine();
+        for (Classe classe : classes){
+            if(classe.getNom().equals(nom)){
+                System.out.println("entrer id du formateur: ");
+                int id = sc.nextInt();
+                sc.nextLine();
+                Formateur formateur = null;
+                for (Formateur formateurs : formateurs) {
+                    if (formateurs.getId() == id) {
+                        formateur = formateurs;
+                    }
+                }
+                if (formateur!=null){
+                    classes.add(classe);
+                    System.out.println("formateur ajouter avec succes");
+                }else
+                    System.out.println("formateur n'existe pas!!");
+            }else
+                System.out.println("classe n'existe pas!!");
+        }
 
     }
 

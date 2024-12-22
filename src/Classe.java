@@ -16,6 +16,10 @@ public class Classe {
         this.formateurs.add(formateur);
         this.apprenants.add(apprenant);
     }
+    public Classe(String nom){
+       this.nom=nom;
+       this.apprenants=new ArrayList<>();
+    }
 
     //getters and setters
     public String getNom() {
@@ -43,30 +47,43 @@ public class Classe {
         this.apprenants = apprenants;
     }
 
-
-//    public String ReadString(){
-//        String string;
-//        Scanner scanner = new Scanner(System.in);
-//        string = scanner.nextLine();
-//        return string;
-//    }
     //objects
     Apprenant ap = new Apprenant();
     Formateur form = new Formateur();
     Scanner scanner = new Scanner(System.in);
 
-    //methode creer classe
-    public void CreerClasse(){
-        System.out.println("entrer le nom de la classe: ");
-        String nom = scanner.nextLine();
-        setNom(nom);
-        System.out.println("ajouter un formateur formateur: ");
-        form.Ajouter();
-        System.out.println("ajouter des apprennants: ");
-        ap.Ajouter();
-        classes.add(new Classe(nom,form,ap));
 
+    public void ajouterApprenant(Apprenant apprenant) {
+        this.apprenants.add(apprenant);
     }
+
+    public void CreerClasse() {
+        System.out.println("Entrer le nom de la classe:");
+        String nom = scanner.nextLine();
+        Classe nouvelleClasse = new Classe(nom);
+        // Gestion du formateur
+        System.out.println("Ajouter un formateur à la classe:");
+        form.Ajouter();
+        nouvelleClasse.setFormateur(form); // Assigner le formateur à la classe
+
+        // Gestion des apprenants
+        System.out.println("Combien d'apprenants souhaitez-vous ajouter ?");
+        int nombreApprenants = scanner.nextInt();
+        scanner.nextLine();
+
+        for (int i = 0; i < nombreApprenants; i++) {
+            System.out.println("Ajouter l'apprenant " + (i + 1) + ":");
+            //Apprenant apprenant = new Apprenant();
+            ap.Ajouter();
+            nouvelleClasse.ajouterApprenant(ap); // Ajouter l'apprenant à la classe
+        }
+
+        // Ajouter la classe à la liste des classes
+        classes.add(nouvelleClasse);
+
+        System.out.println("Classe créée avec succès !");
+    }
+
 
     //methode afficher classe
     public void AfficherClasse() {
@@ -99,21 +116,76 @@ public class Classe {
     public void ModifierClass(){
         System.out.println("enter le nom de la class: ");
         String nom=scanner.nextLine();
-        for (Classe classe : classes){
+        int i;
+        for(Classe classe : classes){ //(Classe classe : classes){
             if(nom.equals(classe.getNom())){
                 System.out.println("entrer le nouveau nom de la classe: ");
                 String nomClasse = scanner.nextLine();
                 setNom(nomClasse);
-                System.out.println("enter le nouveau un formateur formateur: ");
-                form.Modifier();
-                classe.setFormateur(form);
-                System.out.println("voullez vous ajouter ou modifier un apprenat déja existe : ");
-                System.out.println("ajouter des apprennants: ");
-                ap.Ajouter();
-                classes.add(new Classe(nom,form,ap));
+            //modification du formateur
+                System.out.println("enter ID du formateur: ");
+                   int idf=scanner.nextInt();
+                   scanner.nextLine();
+                   Formateur formateur1 = null;
+                   for (Formateur f :formateurs){
+                       if(f.getId()==idf){
+                           formateur1=f;
+                       }
+                   }if (formateur1 != null){
+                       classe.setFormateur(formateur1);
+                    System.out.println("formateur modifier avec succés!!");
+                   }else {
+                    System.out.println("formateur n'existe pas!! ");
+                    }
+            //modification d'apprenant
+
+                System.out.println(" ajouter des nouveaux apprenants  : ");
+                System.out.println("combien d'apprenant voullez vous ajouter : ");
+                int nombre = scanner.nextInt();
+                scanner.nextLine();
+                ArrayList<Apprenant>nouvelleListApp = new ArrayList<>();
+                for(i=0;i<nombre;i++){
+                    System.out.println("entrer id de l'apprenent à ajouter : ");
+                    int ida = scanner.nextInt();
+                    scanner.nextLine();
+                    Apprenant apprenant1=null;
+                    for (Apprenant a : apprenants){
+                        if(a.getId()==ida){
+                            apprenant1=a;
+                        }
+                    }if (apprenant1 != null){
+                        nouvelleListApp.add(apprenant1);
+                    }else {
+                        System.out.println("apprenant introvable!!");
+                    }
+                }
+                classe.setApprenants(nouvelleListApp);
+                System.out.println("apprenant  ajouté avec succée");
+                //classes.set(i,new Classe(nom,form,ap));
+                System.out.println("classe modifié avec succée ");
+            }else {
+                System.out.println("classe introvable!!");
             }
+
         }
 
+    }
+
+    // fonction supprimer
+    public void SupprimerClasse(){
+        System.out.println("entrer le nom de classe a supprimer:");
+        String nom = scanner.nextLine();
+        Classe c = null;
+        for (Classe classe : classes) {
+            if (classe.getNom().equals(nom)) {
+                c=classe;
+
+            }}
+        if (c!=null) {
+            classes.remove(c);
+            System.out.println("classe supprimer avec succes");
+        }else
+            System.out.println("erreur");
     }
 
 }

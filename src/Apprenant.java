@@ -8,6 +8,7 @@ public class Apprenant extends Personne {
     // declaration des variables
     static  int id;
     ArrayList<Apprenant> apprenants= new ArrayList<Apprenant>();
+    ArrayList<Classe>classes=new ArrayList<>();
     ArrayList<Double> notes = new ArrayList<Double>();//stocker les notes des apprenants
     Class classe;
     //Class<Class> classe;
@@ -117,8 +118,30 @@ public class Apprenant extends Personne {
 
     @Override
     public void Associer() {
-
+        System.out.println("entrer le nom de la classe: ");
+        String nom = sc.nextLine();
+        for (Classe classe : classes){
+            if(classe.getNom().equals(sc.nextLine())){
+                System.out.println("entre id de l/'apprenant: ");
+                int id = sc.nextInt();
+                sc.nextLine();
+                Apprenant apprenant = null;
+                for (Apprenant apprenants : apprenants) {
+                    if (apprenants.getId() == id) {
+                        apprenant = apprenants;
+                    }
+                }
+                if (apprenant!=null){
+                    classe.getApprenants().add(apprenant);
+                    System.out.println("apprenant ajouter avec succes");
+                }else System.out.println("apprenant n'existe pas!!");
+                break;
+            }
+            else System.out.println("classe n'existe pas!!");
+        }
     }
+
+
 
     public Apprenant Recherche(){
         System.out.println("entrer id de l'apprenant à rechercher: ");
