@@ -69,13 +69,6 @@ abstract class Personne {
     abstract public  void Associer();
 
 
-    public String ReadString(){
-        String string;
-        Scanner scanner = new Scanner(System.in);
-        string = scanner.nextLine();
-        return string;
-
-    }
 
 
 }

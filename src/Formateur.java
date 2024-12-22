@@ -11,7 +11,6 @@ public class Formateur extends Personne {
     public  ArrayList<Formateur>formateurs=new ArrayList<>();
     public ArrayList<Classe>classes=new ArrayList<>();
     Scanner sc = new Scanner(System.in);
-
     // getter and setter
     public String getSpecialite() {
         return specialite;
