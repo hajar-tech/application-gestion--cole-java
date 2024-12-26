@@ -8,13 +8,12 @@ public class Apprenant extends Personne {
 
     // declaration des variables
     static  int id;
-    ArrayList<Apprenant> apprenants= new ArrayList<Apprenant>();
+   static ArrayList<Apprenant> apprenants= new ArrayList<Apprenant>();
     ArrayList<Classe>classes=new ArrayList<>();
     ArrayList<Double> notes = new ArrayList<Double>();//stocker les notes des apprenants
     Class classe;
+
     //getter ant setter
-
-
     public ArrayList<Double> getNotes() {
         return notes;
     }
@@ -116,31 +115,70 @@ public class Apprenant extends Personne {
             System.out.println("-----apprenent introuvable!!------");
         }
     }
-
-    @Override
-    public void Associer() {
-        System.out.println("entrer le nom de la classe: ");
-        String nom = sc.nextLine();
-        for (Classe classe : classes){
-            if(classe.getNom().equals(nom)){
-                System.out.println("entre id de l/'apprenant: ");
-                int id = sc.nextInt();
-                sc.nextLine();
-                Apprenant apprenant = null;
-                for (Apprenant apprenants : apprenants) {
-                    if (apprenants.getId() == id) {
-                        apprenant = apprenants;
-                    }
-                }
-                if (apprenant!=null){
-                    classe.getApprenants().add(apprenant);
-                    System.out.println("apprenant ajouter avec succes");
-                }else System.out.println("apprenant n'existe pas!!");
-                break;
+    public Apprenant IsAprenantExist (int apprenantId){
+        for(Apprenant apprenant : apprenants){
+            if(apprenant.getId() == apprenantId){
+                return apprenant;
             }
-            else System.out.println("classe n'existe pas!!");
         }
+        return null;
+
     }
+    public Classe IsClassExist (String className){
+        for(Classe classe : classes){
+            if(classe.getClass().getName().equals(className)){
+                return classe;
+            }
+        }
+        return null;
+
+    }
+
+    public void Associer(ArrayList<Classe>classes){
+
+        System.out.println("entrer le nom de la classe: ");
+        String nomClasse = sc.nextLine();
+        Classe classeExiste = IsClassExist(nomClasse);
+        System.out.println("entrer id de l'apprenant : ");
+        int id = sc.nextInt();
+        Apprenant apprenantExiste = IsAprenantExist(id);
+        if(classeExiste != null){
+            if(apprenantExiste !=null ){
+                classeExiste.getApprenants().add(apprenantExiste);
+            }else {
+                System.out.println("apprenant n'exsiste pas");
+            }
+
+        }else {
+            System.out.println("Classe n'exsiste pas");
+        }}
+
+
+
+
+//    public void Associer(ArrayList<Classe>classes ) {
+//        System.out.println("entrer le nom de la classe: ");
+//        String nom = sc.nextLine();
+//        for (Classe classe : classes){
+//            if(classe.getNom().equals(nom)){
+//                System.out.println("entre id de l/'apprenant: ");
+//                int id = sc.nextInt();
+//                sc.nextLine();
+//                Apprenant apprenant = null;
+//                for (Apprenant ap : apprenants) {
+//                    if (ap.getId() == id) {
+//                        apprenant = ap;
+//                    }
+//                }
+//                if (apprenant!=null){
+//                    classe.getApprenants().add(apprenant);
+//                    System.out.println("apprenant ajouter avec succes");
+//                }else System.out.println("apprenant n'existe pas!!");
+//                break;
+//            }
+//            else System.out.println("classe n'existe pas!!");
+//        }
+//    }
 
 
 }

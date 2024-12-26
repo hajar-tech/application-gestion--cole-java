@@ -40,10 +40,8 @@ public class Formateur extends Personne {
     @Override
     public void Ajouter() {
         System.out.println("entrer le nombre des formateurs  à ajouter: ");
-
         int num = sc.nextInt();
         sc.nextLine();
-
         for (int i =0 ; i<num;i++){
             System.out.println("entrer le nom du formateur ");
             String nom = sc.nextLine();
@@ -127,32 +125,33 @@ public class Formateur extends Personne {
         }
 
     }
-
     @Override
-    public void Associer() {
-        System.out.println("entrer le nom de la classe: ");
-        String nom =sc.nextLine();
-        for (Classe classe : classes){
-            if(classe.getNom().equals(nom)){
-                System.out.println("entrer id du formateur: ");
-                int id = sc.nextInt();
-                sc.nextLine();
-                Formateur formateur = null;
-                for (Formateur formateurs : formateurs) {
-                    if (formateurs.getId() == id) {
-                        formateur = formateurs;
-                    }
-                }
-                if (formateur!=null){
-                    classes.add(classe);
-                    System.out.println("formateur ajouter avec succes");
-                }else
-                    System.out.println("formateur n'existe pas!!");
-            }else
-                System.out.println("classe n'existe pas!!");
-        }
-
-    }
+public void Associer (ArrayList<Classe>classes){}
+//    @Override
+//    public void Associer() {
+//        System.out.println("entrer le nom de la classe: ");
+//        String nom =sc.nextLine();
+//        for (Classe classe : classes){
+//            if(classe.getNom().equals(nom)){
+//                System.out.println("entrer id du formateur: ");
+//                int id = sc.nextInt();
+//                sc.nextLine();
+//                Formateur formateur = null;
+//                for (Formateur formateurs : formateurs) {
+//                    if (formateurs.getId() == id) {
+//                        formateur = formateurs;
+//                    }
+//                }
+//                if (formateur!=null){
+//                    classes.add(classe);
+//                    System.out.println("formateur ajouter avec succes");
+//                }else
+//                    System.out.println("formateur n'existe pas!!");
+//            }else
+//                System.out.println("classe n'existe pas!!");
+//        }
+//
+//    }
 
 }
 

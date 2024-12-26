@@ -8,14 +8,14 @@ public class Classe {
     private Formateur formateur;
     ArrayList<Apprenant> apprenants = new ArrayList<Apprenant>();
     ArrayList<Formateur>formateurs = new ArrayList<>();
-    ArrayList<Classe>classes = new ArrayList<Classe>();
+   static ArrayList<Classe>classes = new ArrayList<Classe>();
 
     //constructeur
    public  Classe (){}
     public  Classe(String nom, Formateur formateur, Apprenant apprenant){
         this.nom=nom;
         this.formateurs.add(formateur);
-        this.apprenants.add(apprenant);
+        apprenants.add(apprenant);
 
     }
     public Classe(String nom){

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 abstract class Personne {
@@ -66,7 +67,7 @@ abstract class Personne {
     abstract public  void Modifier();
     abstract public  void Afficher();
     abstract public  void Supprimer();
-    abstract public  void Associer();
+    abstract public  void Associer(ArrayList<Classe>classes);
 
 
 

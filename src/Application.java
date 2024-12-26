@@ -82,7 +82,7 @@ public class Application {
                                 formateur.Supprimer();
                                 break;
                             case 5:
-                                formateur.Associer();
+                                formateur.Associer(Classe.classes);
                                 break;
                             case 6:
                                 break;
@@ -120,7 +120,7 @@ public class Application {
                             apprenant.Supprimer();
                             break;
                         case 5:
-                            apprenant.Associer();
+                            apprenant.Associer(Classe.classes);
                             break;
                         case 6:
                             break;
